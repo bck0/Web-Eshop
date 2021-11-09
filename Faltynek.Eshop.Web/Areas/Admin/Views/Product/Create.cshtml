@@ -1,0 +1,14 @@
+﻿@using Faltynek.Eshop.Web.Areas.Admin.Controllers;
+@model Product
+@{
+    ViewData["Title"] = "Carousel Create";
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>This page create Product Item</p>
+
+@{
+    ViewBag.Action = nameof(ProductController.Create);
+}
+
+<partial name="CreateEditForm" model="Model" />
