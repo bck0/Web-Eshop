@@ -21,5 +21,10 @@ namespace Faltynek.Eshop.Web.Models.Entity
         public string ImageSource { get; set; }
         [StringLength(50)]
         public string ImageAlt { get; set; }
+        [Required]
+        public double Price { get; set; }
+        [StringLength(1024)]
+        [Required]
+        public string Info { get; set; }
     }
 }

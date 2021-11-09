@@ -2,16 +2,14 @@
 using Faltynek.Eshop.Web.Models.Database;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Faltynek.Eshop.Web.Migrations.MySql
+namespace Faltynek.Eshop.Web.Migrations
 {
     [DbContext(typeof(EshopDbContext))]
-    [Migration("20211109141641_Doma_1.1")]
-    partial class Doma_11
+    partial class EshopDbContextModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -52,6 +50,14 @@ namespace Faltynek.Eshop.Web.Migrations.MySql
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Info")
+                        .IsRequired()
+                        .HasMaxLength(1024)
+                        .HasColumnType("varchar(1024)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double");
 
                     b.HasKey("ID");
 

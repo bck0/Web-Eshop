@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Faltynek.Eshop.Web.Migrations.MySql
+namespace Faltynek.Eshop.Web.Migrations
 {
     [DbContext(typeof(EshopDbContext))]
-    [Migration("20211109170552_Doma_1.3")]
-    partial class Doma_13
+    [Migration("20211109212411_Doma_1.0")]
+    partial class Doma_10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -52,6 +52,14 @@ namespace Faltynek.Eshop.Web.Migrations.MySql
                         .IsRequired()
                         .HasMaxLength(255)
                         .HasColumnType("varchar(255)");
+
+                    b.Property<string>("Info")
+                        .IsRequired()
+                        .HasMaxLength(1024)
+                        .HasColumnType("varchar(1024)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("double");
 
                     b.HasKey("ID");
 

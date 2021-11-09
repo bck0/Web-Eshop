@@ -49,20 +49,17 @@ namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
                     return RedirectToAction(nameof(ProductController.Select));
 
                 }
-
             }
-  
-                return View(productItem);
-            
+            return View(productItem);
 
         }
 
         public IActionResult Edit(int ID)
         {
-            Product pFromDatabase = DatabaseFake.ProductItems.FirstOrDefault(ci => ci.ID == ID);
-            if (pFromDatabase != null)
+            Product ciFromDatabase = eshopDbContext.Product.FirstOrDefault(ci => ci.ID == ID);
+            if (ciFromDatabase != null)
             {
-                return View(pFromDatabase);
+                return View(ciFromDatabase);
 
             }
             else
@@ -73,8 +70,8 @@ namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> Edit(Product productItem)
         {
-            Product pFromDatabase = DatabaseFake.ProductItems.FirstOrDefault(ci => ci.ID == productItem.ID);
-            if (pFromDatabase != null)
+            Product piFromDatabase = eshopDbContext.Product.FirstOrDefault(pi => pi.ID == productItem.ID);
+            if (piFromDatabase != null)
             {
                 if (productItem != null && productItem.Image != null)
                 {
@@ -85,12 +82,17 @@ namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
                     {
 
 
-                        pFromDatabase.ImageSource = productItem.ImageSource;
+                        piFromDatabase.ImageSource = productItem.ImageSource;
                     }
                 }
-                pFromDatabase.ImageAlt = productItem.ImageAlt;
+                piFromDatabase.ImageAlt = productItem.ImageAlt;
+
+                piFromDatabase.Price = productItem.Price;
+
+                piFromDatabase.Info = productItem.Info;
 
                 await eshopDbContext.SaveChangesAsync();
+
                 return RedirectToAction(nameof(ProductController.Select));
             }
             else

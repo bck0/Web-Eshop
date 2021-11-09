@@ -70,20 +70,26 @@ namespace Faltynek.Eshop.Web.Models.Database
             Product p1 = new Product()
             {
                 ID = 0,
-                ImageSource = "/img/jirik3.jpg",
-                ImageAlt = "PS"
+                ImageSource = "/img/ps5.jpg",
+                ImageAlt = "Playstation 5",
+                Price = 999,
+                Info = "Konzole zvládne rozlišení až 4K, v případě videí a jednodušších her až 8K. Výchozí SSD úložiště s 825 GB by mělo pracovat vysokou rychlostí 5,5 GB/s, propojené je rozhraním NVMe. ... PS5 je zpětně kompatibilní s hrami z PS4. Proměnlivý hrací režim spotřebuje výrazně méně energie než u PS4."
             };
             Product p2 = new Product()
             {
                 ID = 1,
-                ImageSource = "/img/jirik3.jpg",
-                ImageAlt = "PC"
+                ImageSource = "/img/pc.jpg",
+                ImageAlt = "Počítač",
+                Price = 1500,
+                Info = "PC BARBONE GAME r5 1660 Ti - AMD Ryzen 5 3600, operační paměť 16GB DDR4 3200MHz, 500GB NVMe SSD, grafická karta GTX 1660 Ti 6GB, WiFi, Windows 10 Home"
             };
             Product p3 = new Product()
             {
                 ID = 2,
-                ImageSource = "/img/jirik3.jpg",
-                ImageAlt = "iPhone"
+                ImageSource = "/img/iphone.jpg",
+                ImageAlt = "iPhone 13 128Gb",
+                Price = 1200,
+                Info = "Mobilní telefon - 6,1 Super Retina XDR 2532 × 1170, procesor Apple A15 Bionic 6jádrový, RAM 6 GB, interní paměť 128 GB, zadní fotoaparát 12 Mpx (f/1,6) + 12 Mpx (f/2,4), přední fotoaparát 12 Mpx, GPS, Glonass, NFC, LTE, 5G, Lightning, iOS"
             };
 
             products.Add(p1);
