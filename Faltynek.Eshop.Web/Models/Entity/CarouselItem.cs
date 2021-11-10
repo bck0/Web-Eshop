@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using Faltynek.Eshop.Web.Models.Validations;
 
 namespace Faltynek.Eshop.Web.Models.Entity
 {
@@ -14,6 +15,7 @@ namespace Faltynek.Eshop.Web.Models.Entity
         [Key]
         [Required]
         public int ID { get; set; }
+        [ContentType("image")]
         [NotMapped]
         public IFormFile Image { get; set; }
 

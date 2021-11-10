@@ -19,6 +19,7 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Migrations\MySql\" />
     <Folder Include="wwwroot\img\ProductItems\" />
+    <Folder Include="wwwroot\js\Validation\" />
   </ItemGroup>
 
 </Project>

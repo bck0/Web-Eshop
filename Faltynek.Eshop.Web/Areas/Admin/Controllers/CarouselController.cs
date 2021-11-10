@@ -42,14 +42,14 @@ namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
                 FileUpload fileUpload = new FileUpload(env.WebRootPath, "img/CarouselItems", "image");
                 carouselItem.ImageSource = await fileUpload.FileUploadAsync(carouselItem.Image);
 
-                if (String.IsNullOrWhiteSpace(carouselItem.ImageSource) == false)
+                ModelState.Clear();
+                TryValidateModel(carouselItem);
+                if (ModelState.IsValid)
                 {
+                        eshopDbContext.CarouselItems.Add(carouselItem);
+                        await eshopDbContext.SaveChangesAsync();
 
-                    eshopDbContext.CarouselItems.Add(carouselItem);
-                    await eshopDbContext.SaveChangesAsync();
-
-                    return RedirectToAction(nameof(CarouselController.Select));
-
+                        return RedirectToAction(nameof(CarouselController.Select));
                 }
             }
                 return View(carouselItem);

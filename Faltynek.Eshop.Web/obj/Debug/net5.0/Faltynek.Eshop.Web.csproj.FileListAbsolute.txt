@@ -270,3 +270,7 @@ C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\bin\Debug\net5.
 C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\bin\Debug\net5.0\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\obj\Debug\net5.0\Razor\Views\Product\Detail.cshtml.g.cs
+C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\obj\Debug\net5.0\Razor\Areas\Security\Views\Account\Login.cshtml.g.cs
+C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\obj\Debug\net5.0\Razor\Areas\Security\Views\Account\Register.cshtml.g.cs
+C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\obj\Debug\net5.0\Razor\Areas\Security\Views\_ViewImports.cshtml.g.cs
+C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\obj\Debug\net5.0\Razor\Areas\Security\Views\_ViewStart.cshtml.g.cs
