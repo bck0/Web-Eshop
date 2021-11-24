@@ -33,8 +33,15 @@ using Faltynek.Eshop.Web.Models.Entity;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 4 "C:\Users\User\source\repos\Faltynek.Eshop.Web\Faltynek.Eshop.Web\Areas\Security\Views\_ViewImports.cshtml"
+using Faltynek.Eshop.Web.Models.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Areas/Security/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"90db0fc7d463411dbdf5cb715aa0a41ef5e19e26", @"/Areas/Security/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"a76a36ac813db7776500c660213617c3fdb47760", @"/Areas/Security/Views/_ViewImports.cshtml")]
     public class Areas_Security_Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

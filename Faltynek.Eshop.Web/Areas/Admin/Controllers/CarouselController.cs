@@ -87,11 +87,24 @@ namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
                         ciFromDatabase.ImageSource = carouselItem.ImageSource;
                     }
                 }
+                else
+                {
+                    carouselItem.ImageSource = ":-)";
+                }
+
+                ModelState.Clear();
+                TryValidateModel(carouselItem);
+                if (ModelState.IsValid)
+                {
                 ciFromDatabase.ImageAlt = carouselItem.ImageAlt;
 
                 await eshopDbContext.SaveChangesAsync();
 
                 return RedirectToAction(nameof(CarouselController.Select));
+                }
+
+                return View(carouselItem);
+
             }
             else
             {
