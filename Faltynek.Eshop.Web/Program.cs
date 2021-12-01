@@ -1,5 +1,7 @@
 using Faltynek.Eshop.Web.Models.Database;
+using Faltynek.Eshop.Web.Models.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,20 @@ namespace Faltynek.Eshop.Web
                     var dbContext = scope.ServiceProvider.GetRequiredService<EshopDbContext>();
                     DatabaseInit dbInnit = new DatabaseInit();
                     dbInnit.Initialize(dbContext);
+
+                    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<Role>>();
+                    Task task = dbInnit.EnsureRoleCreated(roleManager);
+                    task.Wait();
+                    task.Dispose();
+
+                    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
+                    task = dbInnit.EnsureAdminCreated(userManager);
+                    task.Wait();
+                    task.Dispose();
+                    task = dbInnit.EnsureManagerCreated(userManager);
+                    task.Wait();
+                    task.Dispose();
+
                 }
             }    
                 

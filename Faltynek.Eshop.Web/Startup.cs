@@ -1,3 +1,5 @@
+using Faltynek.Eshop.Web.Models.ApplicationServices.Abstraction;
+using Faltynek.Eshop.Web.Models.ApplicationServices.Implementation;
 using Faltynek.Eshop.Web.Models.Database;
 using Faltynek.Eshop.Web.Models.Identity;
 using Microsoft.AspNetCore.Builder;
@@ -56,7 +58,7 @@ namespace Faltynek.Eshop.Web
 
 
 
-           // services.AddScoped<ISecurityApplicationService, SecurityIdentityApplicationService>();
+            services.AddScoped<ISecurityApplicationService, SecurityIdentityApplicationService>();
 
             services.AddControllersWithViews();
         }

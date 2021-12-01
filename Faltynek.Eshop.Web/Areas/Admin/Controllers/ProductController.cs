@@ -1,6 +1,8 @@
 ﻿using Faltynek.Eshop.Web.Models.Database;
 using Faltynek.Eshop.Web.Models.Entity;
+using Faltynek.Eshop.Web.Models.Identity;
 using Faltynek.Eshop.Web.Models.Implementation;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -12,6 +14,7 @@ using System.Threading.Tasks;
 namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = nameof(Roles.Admin) + ", " + nameof(Roles.Manager))]
     public class ProductController : Controller
     {
         readonly EshopDbContext eshopDbContext;
