@@ -33,7 +33,6 @@ namespace Faltynek.Eshop.Web.Models.Database
             var entityTypes = builder.Model.GetEntityTypes();
             foreach( var entity in entityTypes)
             {
-                //jika je gej
                 entity.SetTableName(entity.GetTableName().Replace("AspNet",""));
             }
         }

@@ -7,10 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Faltynek.Eshop.Web.Models.Database;
 using Faltynek.Eshop.Web.Models.Entity;
+using Faltynek.Eshop.Web.Models.Identity;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Faltynek.Eshop.Web.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = nameof(Roles.Admin))]
     public class OrderItemsController : Controller
     {
         private readonly EshopDbContext _context;

@@ -25,6 +25,24 @@ namespace Faltynek.Eshop.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddDistributedMemoryCache(); // Adds a default in-memory implementation of IDistributedCache
+
+            services.AddSession(options =>
+
+            {
+
+                // Set a short timeout for easy testing.
+
+                options.IdleTimeout = TimeSpan.FromMinutes(30);
+
+                options.Cookie.HttpOnly = true;
+
+                // Make the session cookie essential
+
+                options.Cookie.IsEssential = true;
+
+            });
+
             services.AddDbContext<EshopDbContext>(options => options.UseMySql(Configuration.GetConnectionString("MySqlConnectionString"), new MySqlServerVersion("8.0.26")));
 
             services.AddIdentity<User, Role>()
@@ -78,7 +96,7 @@ namespace Faltynek.Eshop.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();
